@@ -51,29 +51,111 @@
 
 
 
-double CalculateAverageGrade(int[] grades)
+// double CalculateAverageGrade(int[] grades)
+// {
+//     int sum = 0;
+//     foreach (int grade in grades)
+//     {
+//         sum += grade;
+//     }
+//     return (double)sum / grades.Length;
+// }
+// int CountFives(int[] grades)
+// {
+//     int count = 0;
+//     foreach (int cn in grades)
+//     {
+//         if (cn == 5)
+//         {
+//             count++;
+//         }
+//     }
+//      return count;
+// }
+
+// int[] grades = { 4, 5, 3, 5, 4 };
+// double average = CalculateAverageGrade(grades);
+// Console.WriteLine(average);
+// Console.WriteLine(CountFives(grades));
+
+
+
+
+// //Задача В
+// bool isEven(int number)
+// {
+//    return number % 2 == 0;
+// }
+// if (isEven(4))
+// {
+//     Console.WriteLine("Число чётное");
+// }
+// else
+// {
+//     Console.WriteLine("Число нечётное");
+// }
+
+// //Задача Г
+// int FindMax(int[] numbers)
+// {
+//     int max = numbers[0];
+//     foreach (int num in numbers)
+//     {
+//         if (max < num)
+//         {
+//             max = num;
+//         }
+//     }
+//     return max;
+// }
+
+// int[] values = { 3, 7, 5, 3, 1 };
+// int result = FindMax(values);
+// Console.WriteLine(result);
+
+
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+//     Console.WriteLine("Фамилия не введена. Завершение работы.");
+//     return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+//     .OrderBy(_ => rnd.Next())
+//     .Take(2)
+//     .OrderBy(x => x)
+//     .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+// // Вариант 1
+// void PrintSeparator()
+// {
+//     Console.WriteLine("--------------------");
+// }
+
+// Console.WriteLine("АААААААААААААААААААА");
+// PrintSeparator();
+// Console.WriteLine("ББББББББББББББББББББ");
+// PrintSeparator();
+// Console.WriteLine("ВВВВВВВВВВВВВВВВВВВВ");
+// PrintSeparator();
+// Console.WriteLine("ГГГГГГГГГГГГГГГГГГГГ");
+
+
+// // Вариант 9
+bool ContainsValue(int[] numbers, int target)
 {
-    int sum = 0;
-    foreach (int grade in grades)
+    foreach (int num in numbers)
     {
-        sum += grade;
-    }
-    return (double)sum / grades.Length;
-}
-int CountFives(int[] grades)
-{
-    int count = 0;
-    foreach (int cn in grades)
-    {
-        if (cn == 5)
+        if (num == target)
         {
-            count++;
+            return true;
         }
     }
-     return count;
+    return false;;
 }
 
-int[] grades = { 4, 5, 3, 5, 4 };
-double average = CalculateAverageGrade(grades);
-Console.WriteLine(average);
-Console.WriteLine(CountFives(grades));
+int[] values = { 15, 76, 235, 85, 34, 6, 1, 9768 };
+Console.WriteLine(ContainsValue(values, 6));
